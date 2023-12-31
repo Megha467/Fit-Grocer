@@ -1,0 +1,20 @@
+.product_description{
+    text-align: left;
+    display: block;
+    margin-left: 14%;
+    margin-right: 2%; 
+}
+
+.cart_button{
+    background-color: #E74C1B;
+    border-radius: 50px;
+    height: 40px;
+    color: white;
+    /* width: 20%; */
+    margin-top: 26%;
+}
+
+.align{
+    display: flex;
+    margin-left: 14%;
+}
