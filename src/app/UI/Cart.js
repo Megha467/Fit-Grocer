@@ -44,13 +44,35 @@ const Cart = () => {
       
     ]
     
-    
     const{id} = useParams();
+    const[count, setCount] = useState(1);
     const product = menu_array.find(item => item.id == id);
     
     return(
         <div className="main_container">
-        <h1> hello</h1>
+        <div className="px-4 my-5 bg-light rounded-3 py-5">
+                <div className="container py-4">
+                    <div className="row justify-content-center">
+                        <div className="col-md-4">
+                            <img src={product.image} alt={product.title} height="200px" width="180px" />
+                        </div>
+                        <div className="col-md-4">
+                            <h3>{product.title}</h3>
+                            <p className="lead fw-bold">
+                                {count} X ${product.price} = ${count * product.price}
+                            </p>
+                            <button className="btn btn-outline-dark me-4" onClick={()=>{setCount(count+1)}}>
+                                +
+                            </button>
+                            <button className="btn btn-outline-dark" onClick={()=> {setCount(count-1)}}>
+                              -
+                            </button>
+                            <br/>
+                            <NavLink to={`/checkout`}><button className="checkout">Check out</button></NavLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
